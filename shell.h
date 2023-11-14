@@ -8,10 +8,10 @@
 #include <sys/wait.h>
 
 void b_print(const char *str);
-void show_prompt (void);
-void command_exec(const char *command);
+void show_prompt(void);
 void command_parsing(char *string, size_t str_size);
-void command_exec2(const char *command);
-void exit_system_call (void);
+void command_exec(const char *command);
+void exit_system_call(void);
+void exit_system_call(void);
 
 #endif

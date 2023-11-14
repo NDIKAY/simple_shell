@@ -2,13 +2,17 @@
 /**
  * command_parsing - function for reading user command
  * @string: command and args entered by user
- * @str_size: size of string
+ * @str_size: size of command
  */
 
 void command_parsing(char *string, size_t str_size)
 {
-	if (fgets(string, str_size, stdin) == NULL)
+	ssize_t read = getline(&string, &str_size, stdin);
+
+
+	if (read == -1)
 	{
+
 		if (feof(stdin))
 		{
 			b_print("\n");
@@ -20,6 +24,10 @@ void command_parsing(char *string, size_t str_size)
 			exit(EXIT_FAILURE);
 		}
 	}
-	string[strcspn(string, "\n")] = '\0';
+	if (string[read - 1] == '\n')
+	{
+		string[read - 1] = '\0';
+
+	}
 }
 

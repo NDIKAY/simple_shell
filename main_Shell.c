@@ -10,24 +10,19 @@ int main(void)
 
 	while (true)
 	{
-		length = strlen(commandLine);
+		length = sizeof(commandLine);
 
 		show_prompt();
-		command_parsing(commandLine, sizeof(commandLine));
+		command_parsing(commandLine, length);
 		command_exec(commandLine);
-		command_exec2(commandLine);
+		/*command_exec2(commandLine);*/
 
 		length = strlen(commandLine);
 
-		if (length > 0 && commandLine[length - 1] =='\n')
+		if (length > 0 && commandLine[length - 1] == '\n')
 		{
 			commandLine[length - 1] = '\0';
 		}
-		if (strcmp(commandLine, "exit") == 0)
-		{
-			exit_system_call();
-		}
-		command_exec2(commandLine);
 	}
 	return (0);
 }
