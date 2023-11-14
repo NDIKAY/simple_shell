@@ -5,6 +5,6 @@
 
 void show_prompt(void)
 {
-	b_print("barthez$ ");
+	b_print("simple_shell$ ");
 }
 
