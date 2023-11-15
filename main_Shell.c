@@ -15,8 +15,7 @@ int main(void)
 		show_prompt();
 		command_parsing(commandLine, length);
 		command_exec(commandLine);
-		/*command_exec2(commandLine);*/
-
+		path_exec(commandLine);
 		length = strlen(commandLine);
 
 		if (length > 0 && commandLine[length - 1] == '\n')
