@@ -5,7 +5,7 @@
  */
 void command_exec(const char *command)
 {
-	char *args[4];
+	char *args[5];
 	pid_t child_process = fork();
 
 	if (child_process == -1)
@@ -27,8 +27,9 @@ void command_exec(const char *command)
 
 		args[0] = "/bin/sh";
 		args[1] = "-c";
-		args[2] = command_copy;
-		args[3] = NULL;
+		args[2] = "/usr/";
+		args[3] = command_copy;
+		args[4] = NULL;
 
 		execve(args[0], args, NULL);
 
