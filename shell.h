@@ -13,5 +13,6 @@ void command_parsing(char *string, size_t str_size);
 void command_exec(const char *command);
 void exit_system_call(void);
 void exit_system_call(void);
+void path_exec(const char *command);
 
 #endif
